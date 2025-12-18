@@ -91,7 +91,7 @@ A multi-column testimonial section constructed with **CSS Grid**. Focused on cre
 - Live Site: [View here](https://codereme.github.io/frontend-mentor-solutions/testimonials-grid-section/index.html)
 - Code Solution: [View here](https://github.com/codereme/frontend-mentor-solutions/tree/main/testimonials-grid-section)
 
-![Desktop screenshot](./testimonials-grid-section/images/screenshot.png)
+![Desktop screenshot](./testimonials-grid-section/images/desktop-screenshot.png)
 
 ## More Projects
 
