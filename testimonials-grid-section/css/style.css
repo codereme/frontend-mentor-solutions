@@ -36,7 +36,7 @@
   --clr-white: hsl(0, 0%, 100%);
   --clr-grey-100: hsl(214, 17%, 92%);
   --clr-grey-200: hsl(0, 0%, 81%);
-  --clr-grey-400: hsl(224, 10%, 45%);
+  --clr-grey-400: hsl(224, 10%, 30%);
   --clr-grey-500: hsl(217, 19%, 35%);
   --clr-dark-blue: hsl(219, 29%, 14%);
   --clr-black: hsl(0, 0%, 7%);
@@ -80,8 +80,8 @@ html {
 
 .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  inline-size: 1px;
+  block-size: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
@@ -95,11 +95,6 @@ html {
   align-items: center;
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
-}
-
 /*-------------------------- *\
   #TESTIMONIALS 
 \*---------------------------*/
@@ -109,8 +104,8 @@ html {
 }
 
 .avatar {
-  width: 3.07rem;
-  height: 3.07rem;
+  inline-size: 3.07rem;
+  block-size: 3.07rem;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--avatar-border-color, transparent);
