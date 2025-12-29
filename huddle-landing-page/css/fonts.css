@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format(trueType);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins/Poppins-SemiBold.ttf") format(trueType);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../assets/fonts/Open-sans/OpenSans-VariableFont_wdth\,wght.ttf")
+    format(trueType);
+  font-weight: 400;
+  font-display: swap;
+}

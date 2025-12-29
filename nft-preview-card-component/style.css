@@ -1,0 +1,234 @@
+/** 
+* CONTENTS
+*
+* RESET
+* GLOBAL-STYLES
+* CARD
+* IMAGE WITH OVERLAY BG HOVER 
+* STATES
+* ATTRIBUTION
+* LAYOUT
+* REDUCE MOTION 
+*/
+
+/*--------------------------*\
+  #RESET 
+\*--------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*--------------------------*\
+  #GLOBAL-STYLES 
+\*--------------------------*/
+
+:root {
+  /* Colors */
+  --blue-500: hsl(215, 51%, 70%);
+  --cyan-400: hsl(178, 100%, 50%);
+  --cyan-alpha: hsla(178, 100%, 50%, 0.5);
+  --blue-950: hsl(217, 54%, 11%);
+  --blue-900: hsl(216, 50%, 16%);
+  --blue-800: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Fonts */
+  --ff-body: "Outfit", sans-serif;
+
+  --fs-base: 18px;
+  --fs-sm: 0.88rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.1rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+
+  /* Spacings */
+  --spacing-sm: 0.88rem;
+  --spacing-md: 1.33rem;
+  --spacing-lg: 1.77rem;
+
+  /* Border radius */
+  --border-radius-sm: 12px;
+  --border-radius-md: 20px;
+
+  /* Box shadows */
+  --shadow-card: 20px 35px 28px rgba(0, 0, 0, 0.15);
+}
+
+html {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+}
+
+.divider {
+  border: 1px solid var(--blue-800);
+}
+
+/*--------------------------*\
+  #CARD 
+\*--------------------------*/
+
+.card {
+  width: min(20rem, 90vw);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  background-color: var(--blue-900);
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-block: var(--spacing-sm);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  color: var(--white);
+  transition: color 0.2s ease;
+}
+
+.title:hover,
+.title:focus-visible {
+  color: var(--cyan-400);
+}
+
+.description {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-light);
+  color: var(--blue-500);
+  line-height: 1.5;
+}
+
+/*-----------------------------*\
+  #IMAGE WITH OVERLAY BG HOVER 
+\*-----------------------------*/
+
+.card-img-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.card-img {
+  display: block; /* for overlay bg-image */
+  max-inline-size: 100%;
+  block-size: auto;
+  border-radius: var(--border-radius-sm);
+}
+
+.overlay-with-bg-image {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--cyan-alpha);
+  background-image: url("./images/icon-view.svg");
+  background-size: 15%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-sm);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-img-link:hover .overlay-with-bg-image {
+  opacity: 1;
+}
+
+/*--------------------------*\
+  #STATES 
+\*--------------------------*/
+
+.states {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.state-ethereum {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--cyan-400);
+}
+
+.state-days-left {
+  font-size: var(--fs-md);
+  color: var(--blue-500);
+}
+
+/*--------------------------*\
+  #ATTRIBUTION 
+\*--------------------------*/
+
+.attribution {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-block-start: var(--spacing-sm);
+}
+
+.attribution-avatar {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.attribution-text {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-light);
+  color: var(--blue-500);
+}
+
+.attribution-link {
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  color: var(--white);
+  transition: color 0.2s ease;
+}
+
+.attribution-link:hover,
+.attribution-link:focus-visible {
+  color: var(--cyan-400);
+}
+
+/*--------------------------*\
+  #LAYOUT 
+\*--------------------------*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-block-size: 100vh;
+
+  padding-block: var(--spacing-lg);
+  background-color: var(--blue-950);
+}
+
+/*--------------------------*\
+  #REDUCE MOTION 
+\*--------------------------*/
+
+@media (prefers-reduced-motion: reduce) {
+  .card-img-link,
+  .overlay-with-bg-image,
+  .title,
+  .attribution-link {
+    transition-duration: 0.01ms;
+  }
+}
